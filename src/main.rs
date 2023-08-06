@@ -6,7 +6,7 @@ use axum::{routing::get, Router, Server};
 async fn main() {
     let router = Router::new().route("/", get(|| async { "hello 👋" }));
 
-    let address = SocketAddr::from(([127, 0, 0, 1], 7878));
+    let address = SocketAddr::from(([0, 0, 0, 0], 7878));
     println!("Listening on {}", address);
 
     Server::bind(&address)
